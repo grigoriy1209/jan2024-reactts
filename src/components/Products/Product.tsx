@@ -20,7 +20,10 @@ const Product:FC<IProductType> = ({
 
     return (
         <div >
-            <h2>{title}--{category}--{price}</h2>
+            <h1>{brand}</h1>
+            <h2>{title}--{category}--price:{price}</h2>
+            <p>{description}--discountPercentage:{discountPercentage}</p>
+            <p>rating:{rating}--stock:{stock}{thumbnail}</p>
             <div>
                 {
                    images.map((image,index)=>(
