@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
     headers:{'Content-Type': 'application/json'}
 });
 
-const getAllUsers =async ():Promise<AxiosResponse<IUserModel[]> >=> {
+const getAllUsers = ():Promise<AxiosResponse<IUserModel[]> >=> {
     return axiosInstance.get("/users")
 };
 
