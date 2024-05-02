@@ -5,7 +5,8 @@ import {IPostModel} from "../models/IPostModel";
 
 
 const axiosInstance = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com/'
+    baseURL: 'https://jsonplaceholder.typicode.com/',
+    headers:{'Content-Type': 'application/json'}
 });
 
 const getAllUsers =async ():Promise<AxiosResponse<IUserModel[]> >=> {
