@@ -1,9 +1,7 @@
 const ToggleComponent = () => {
     return (
         <div>
-           {/*<button onClick={}></button>*/}
-           {/*<button onClick={()=>gtr()}></button>*/}
-           {/*<button onClick={}></button>*/}
+            ToggleComponent
         </div>
     );
 };
