@@ -1,10 +1,10 @@
 import React from "react";
-import {ToggleComponent} from "./componets/ToggleComponent";
+
 
 const App = () => {
   return (
       <div>
-        <ToggleComponent/>
+       app
       </div>
   );
 };
