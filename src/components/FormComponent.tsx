@@ -17,11 +17,7 @@ const FormComponent:FC = () => {
     const save=(formValues:PostModule)=> {
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
-            body: JSON.stringify({
-                title: '',
-                body: '',
-                userId:'',
-            }),
+            body: JSON.stringify(formValues),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },

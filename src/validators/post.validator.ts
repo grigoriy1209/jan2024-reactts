@@ -8,8 +8,8 @@ export const postValidators =
                 .max(20)
                 .required()
                 .messages({
-                    "number.min":"min 1",
-                    "number.max":"max 20",
+                    'number.min':'min 1',
+                    'number.max':'max 20',
                 }),
             title: Joi.string()
                 .pattern(/^[a-zA-Z]+$/u)
