@@ -4,6 +4,7 @@ import {joiResolver} from "@hookform/resolvers/joi";
 
 import {PostModule} from "../interfaces/IPostModule";
 import {postValidators} from "../validators/post.validator";
+import createPost from "../services/postService";
 
 
 
@@ -16,17 +17,11 @@ const FormComponent:FC = () => {
                } = useForm<PostModule>({mode:"all", resolver: joiResolver(postValidators)});
 
     const save=(formValues:PostModule)=> {
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            body: JSON.stringify(formValues),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
-            .then((response) => response.json())
-            .then((json) => {console.log(json);
-            reset()
-            });
+           createPost(formValues)
+               .then(data=>{
+                   console.log(data)
+               })
+              reset()
     };
 
 

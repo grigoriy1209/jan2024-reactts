@@ -9,7 +9,7 @@ export const postValidators =
                 .required()
                 .messages({
                     'number.min':'min 1',
-                    'number.max':'max 20',
+                    'number.max':'max 10',
                 }),
             title: Joi.string()
                 .pattern(/^[a-zA-Z]+$/u)
