@@ -11,6 +11,7 @@ const FormComponent:FC = () => {
    const {
        register,
        handleSubmit,
+       reset,
        formState:{errors,isValid}
                } = useForm<PostModule>({mode:"all", resolver: joiResolver(postValidators)});
 
@@ -23,7 +24,9 @@ const FormComponent:FC = () => {
             },
         })
             .then((response) => response.json())
-            .then((json) => console.log(json));
+            .then((json) => {console.log(json);
+            reset()
+            });
     };
 
 
