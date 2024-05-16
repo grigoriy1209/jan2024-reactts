@@ -1,10 +1,10 @@
 import {apiService} from "./apiService";
 import {urls} from "../constants";
-import {AxiosResponse} from "axios";
 import {IUserModel} from "../model";
+import {IRes} from "../types/responseType";
 
 const userService = {
-    getAllUsers: ():Promise<AxiosResponse<IUserModel[]>> => apiService.get(urls.users.base)
+    getAllUsers: ():IRes<IUserModel[]>=> apiService.get(urls.users.base)
 }
 export {
     userService
