@@ -1,8 +1,10 @@
 import {apiService} from "./apiService";
 import {urls} from "../constants";
+import {AxiosResponse} from "axios";
+import {IUserModel} from "../model";
 
 const userService = {
-    getAllUsers: () => apiService.get(urls.users.base)
+    getAllUsers: ():Promise<AxiosResponse<IUserModel[]>> => apiService.get(urls.users.base)
 }
 export {
     userService
