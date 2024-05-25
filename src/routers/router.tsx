@@ -2,9 +2,7 @@ import React from "react";
 import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {MainLayout} from "../layouts/MainLayout";
-import {CommentsPage, PostDetailsPage, PostsPage, UserDetailsPage, UsersPage} from "../pages";
-
-
+import {CommentsPage, PostsPage, UsersPage} from "../pages";
 
 const router = createBrowserRouter([
     {
@@ -13,22 +11,16 @@ const router = createBrowserRouter([
                 index:true, element:<Navigate to={'users'}/>
             },
             {
-                path:'users', element:<UsersPage/>
-            },
-            {
-                path:'users/:id', element:<UserDetailsPage/>, children:[
+                path:'users', element:<UsersPage/>, children:[
                     {
-                        path:'posts', element:<PostsPage/>
+                        path:':id/posts', element:<PostsPage/>, children:[
+                            {
+                                path:':postId/comments', element:<CommentsPage/>
+                            }
+                        ]
                     }
                 ]
             },
-            {
-                path:'posts/:id',element:<PostDetailsPage/>,children:[
-                    {
-                        path:'comments',element: <CommentsPage/>
-                    }
-                ]
-            }
         ]
     }
 ]);

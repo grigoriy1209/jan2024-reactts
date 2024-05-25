@@ -4,8 +4,8 @@ import {apiService} from "./apiService";
 import {urls} from "../constants";
 
 const commentService = {
-    getAllUser:():IRes<ICommentModel[]>=>apiService.get(urls.comments.base),
-    getById:(id:string):IRes<ICommentModel> =>apiService.get(urls.comments.byId('id'))
+    getCommentsOfPost:(postId:string):IRes<ICommentModel[]>=>apiService.get(urls.comments.getComments(postId)),
+
 }
 export {
     commentService

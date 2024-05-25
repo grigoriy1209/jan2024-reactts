@@ -1,23 +1,19 @@
-import {FC, PropsWithChildren, useEffect, useState} from "react";
-import {IPostModel, IUserModel} from "../../models";
-import {IRes} from "../../types/responseType";
-import {postService} from "../../services";
+import {FC, PropsWithChildren} from "react";
+
+import {IPostModel} from "../../models";
+
+import {Post} from "./Post";
+
 interface IProps extends PropsWithChildren {
-    userId:IPostModel[];
+    posts:IPostModel[];
 }
-const Posts:FC<IProps> = ({userId}) => {
-    const [posts, setPosts] = useState<IRes<IPostModel[]>>()
+const Posts:FC<IProps> = ({posts}) => {
 
-
-
-    useEffect(() => {
-        if(userId){
-            postService.getByUserId(userId).then(({data})=>console.log(data))
-        }
-    }, [userId]);
     return (
         <div>
-            Posts
+            {
+                posts.map(post =><Post key={post.id} post={post}/>)
+            }
         </div>
     );
 };

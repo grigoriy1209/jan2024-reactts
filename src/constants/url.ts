@@ -12,10 +12,12 @@ const urls = {
     posts:{
         base: posts,
         byId:(id: number) => `/posts/${id}`,
+        getPosts:(userId: string) => `${users}/${userId}/posts`
     },
     comments:{
         base: comments,
-        byId:(id: string) => `/comments/${id}`,
+        byId:(id: number) => `/comments/${id}`,
+        getComments:(postId: string) => `${posts}/${postId}/comments`,
     }
 
 }
