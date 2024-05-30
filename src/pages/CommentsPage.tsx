@@ -13,7 +13,8 @@ const CommentsPage = () => {
     useEffect(() => {
         if(postId){
             commentService.getCommentsOfPost(postId)
-                .then(({data})=>console.log(data))
+                .then(({data})=>setComments(data))
+
         }
 
     }, [postId]);

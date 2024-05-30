@@ -5,26 +5,25 @@ import {postService} from "../services";
 import {Posts} from "../components/PostsContainer";
 
 
-
 const PostsPage = () => {
     const {id} = useParams();
     console.log(id);
     const [posts, setPosts] = useState<IPostModel[]>([])
 
     useEffect(() => {
-        if(id){
+        if (id) {
             postService.getPostOfUser(id)
-             .then(({data})=>setPosts(data))
+                .then(({data}) => setPosts(data))
         }
 
     }, [id]);
     return (
         <div>
 
-                <Posts  posts={posts}/>
-                         <hr/>
-                         <Outlet />
-
+            <Posts posts={posts}/>
+            <hr color={'red'}/>
+            <Outlet/>
+            <hr color={'red'}/>
         </div>
     );
 };

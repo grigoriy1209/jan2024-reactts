@@ -1,6 +1,6 @@
 import {FC, PropsWithChildren} from "react";
 import {IPostModel} from "../../models";
-import {useNavigate} from "react-router";
+import {Outlet, useNavigate} from "react-router";
 
 interface IProps extends PropsWithChildren {
     post: IPostModel
@@ -16,10 +16,11 @@ const Post:FC<IProps>= ({post}) => {
                 <p>{body}</p>
             <button onClick={()=>{
 
-                navigate(`/posts/${id}/comments`)
+                navigate(`/users/${userId}/posts/${id}/comments`)
             }}>
                   get info comments
             </button>
+
         </div>
     );
 };

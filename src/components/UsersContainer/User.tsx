@@ -15,6 +15,7 @@ const User: FC<IProps> = ({user}) => {
             <div> ID:{id}--{name} </div>
             <p>{email}--{phone}</p>
             <p>{state}-{city}--{street}</p>
+
             <button onClick={() => {
                 navigate(`/users/${id}/posts`)
             }}>get info post
