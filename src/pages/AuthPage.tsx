@@ -1,0 +1,12 @@
+
+import {FormComponent} from "../components/FormComponent";
+
+const AuthPage = () => {
+    return (
+        <div>
+            <FormComponent/>
+        </div>
+    );
+};
+
+export {AuthPage};
