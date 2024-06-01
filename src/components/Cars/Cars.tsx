@@ -1,15 +1,22 @@
-import {useEffect, useState} from "react";
+import {FC, useEffect, useState} from "react";
 import {carService} from "../../services/carService";
 import {ICarWithAuth} from "../../models/ICarWithAuth";
+import {Car} from "./Car";
 
-const Cars = () => {
-    const [cars, setCars] = useState<ICarWithAuth[]>([])
-    useEffect(() => {
-        carService.getCars().then(value => console.log(value));
-    }, []);
+interface IProps {
+    cars: ICarWithAuth[];
+}
+
+const Cars:FC<IProps> = ({cars}) => {
+    // const [cars, setCars] = useState<ICarWithAuth[]>([])
+    // useEffect(() => {
+    //     carService.getCars().then(value => console.log(value!.items));
+    // }, []);
     return (
         <div>
-            Cars
+            {
+                cars.map(item =><Car car={car}/>)
+            }
         </div>
     );
 };
