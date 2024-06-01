@@ -6,11 +6,14 @@ interface IProps {
     car:ICarWithAuth
 }
 
-const Car:FC   = ({car}) => {
-    const (brend,year,price,id) = car;
+const Car:FC<IProps>   = ({car}) => {
+
     return (
         <div>
-            {car.brend}-{car.id}{car.year}
+           price-- {car.price}
+           id-- {car.id}
+            year--{car.year}
+            brand--{car.brand}
         </div>
     );
 };

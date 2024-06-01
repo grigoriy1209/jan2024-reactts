@@ -15,7 +15,7 @@ const Cars:FC<IProps> = ({cars}) => {
     return (
         <div>
             {
-                cars.map(item =><Car car={car}/>)
+                cars.map((car) =><Car key={car.id} car={car}/>)
             }
         </div>
     );
