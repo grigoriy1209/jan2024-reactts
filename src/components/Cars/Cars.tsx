@@ -8,10 +8,10 @@ interface IProps {
 }
 
 const Cars:FC<IProps> = ({cars}) => {
-    // const [cars, setCars] = useState<ICarWithAuth[]>([])
-    // useEffect(() => {
-    //     carService.getCars().then(value => console.log(value!.items));
-    // }, []);
+    const [cars, setCars] = useState<ICarWithAuth[]>([])
+    useEffect(() => {
+        carService.getCars().then((value)=>console.log(value!.items));
+    }, []);
     return (
         <div>
             {
