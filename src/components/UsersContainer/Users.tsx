@@ -1,8 +1,10 @@
-import {useContextProvider} from "../../hooks/useContextProvider";
+
 import {User} from "./User";
 
+import {useStore} from "../../context/ContextProvider";
+
 const Users = () => {
-    const {userStore:{allUsers}} = useContextProvider();
+    const {userStore:{allUsers}} = useStore();
     return (
         <div>
             {

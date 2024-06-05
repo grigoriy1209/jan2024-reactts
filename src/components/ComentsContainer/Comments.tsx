@@ -1,8 +1,9 @@
-import {useContextProvider} from "../../hooks/useContextProvider";
+
 import {Comment} from "./Comment";
+import {useStore} from "../../context/ContextProvider";
 
 const Comments = () => {
-    const {commentStore: {allComments}} = useContextProvider();
+    const {commentStore: {allComments}} = useStore();
     return (
         <div>
             {

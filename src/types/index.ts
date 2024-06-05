@@ -1,4 +1,4 @@
 export * from './PostWithCommentType'
 export * from './response'
-export * from './StoryType'
+export * from './StoreType'
 export * from './UserWithPostType'
